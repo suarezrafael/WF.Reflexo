@@ -81,6 +81,11 @@ namespace WF.Reflexo
         }
         private void btnAlvoClick(object sender, EventArgs e)
         {
+            int novaLarguraBotao = btnAlvo.Size.Width - 10;
+            int novaAlturaBotao = btnAlvo.Size.Height - 10;
+
+            btnAlvo.Size = new Size(novaLarguraBotao, novaAlturaBotao);
+
             stopwatch.Stop(); // para o cronometro
             btnAlvo.Visible = false; // oculta o botão alvo
             MessageBox.Show($"Tempo de reação: {stopwatch.ElapsedMilliseconds}", "Res");
