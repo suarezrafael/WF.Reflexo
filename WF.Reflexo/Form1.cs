@@ -38,7 +38,7 @@ namespace WF.Reflexo
             // cria o btnAlvo
             btnAlvo = new Button()
             {
-                Size = new Size(60, 60),
+                Size = new Size(100, 100),
                 BackColor = Color.Red,
                 Visible = false
             };
