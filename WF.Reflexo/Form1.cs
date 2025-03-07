@@ -81,9 +81,23 @@ namespace WF.Reflexo
         }
         private void btnAlvoClick(object sender, EventArgs e)
         {
+
             int novaLarguraBotao = btnAlvo.Size.Width - 10;
             int novaAlturaBotao = btnAlvo.Size.Height - 10;
 
+            // 3 - encerrar jogo ao atingir 20 px de tamanho 
+            if (novaAlturaBotao <= 20)
+            {
+                btnIniciar.Visible = true;
+                btnIniciar.Enabled = true;
+                stopwatch.Stop();
+                timer.Stop();
+                btnAlvo.Size = new Size(100, 100);
+                btnAlvo.Visible = false;
+                MessageBox.Show("Fim de jogo.");
+                return;
+            }
+            // redimenciona o botaoAlvo
             btnAlvo.Size = new Size(novaLarguraBotao, novaAlturaBotao);
 
             stopwatch.Stop(); // para o cronometro
